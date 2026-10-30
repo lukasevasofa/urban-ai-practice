@@ -42,3 +42,20 @@ ENV/
 
 # PyCharm env
 .idea
+
+# macOS and local editor settings
+.DS_Store
+.vscode/
+
+# Local credentials and environment variants
+.env.*
+.aws/
+.ssh/
+.codex/
+
+# Download caches and incomplete / temporary files
+osm_cache/
+*.part
+*.tmp
+*.temp
+*~

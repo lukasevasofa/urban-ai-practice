@@ -1,0 +1,42 @@
+{
+  "created_utc": "2026-10-30T20:30:23.533025+00:00",
+  "versions": {
+    "blocksnet": "1.0.0a9",
+    "iduedu": "0.4.1",
+    "geopandas": "1.2.0",
+    "osmnx": "2.1.1",
+    "networkx": "3.7",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "torch": "2.2.2"
+  },
+  "revision": "korenovsk-build-1",
+  "sha256": "9259574e47b3a28a3924b01e1f0b95df9d13f0da1be2a1f7f777b40fe9bccb91",
+  "rows": 403,
+  "storage_crs": "EPSG:4326",
+  "details": {
+    "signature": "70abe0c2939b625cda4514a2e52541e5dd5567e80f337407c5a90ffd06d04f25",
+    "parameters": {
+      "blocks": "99c1f0ba9026877f27b91627bcec36b66e2e0eef44f5567d92bf286a16969e3b",
+      "zones": "2e981625fc861be2a59621a2b985159ac1f4ba9f4e490c443c143ceba68babe2",
+      "rules": {
+        "commercial": "business",
+        "industrial": "industrial",
+        "cemetery": "special",
+        "garages": "industrial",
+        "residential": "residential",
+        "retail": "business",
+        "grass": "recreation",
+        "farmland": "agriculture",
+        "construction": "special",
+        "brownfield": "industrial",
+        "forest": "recreation",
+        "recreation_ground": "recreation",
+        "religious": "special",
+        "flowerbed": "recreation",
+        "military": "special",
+        "landfill": "transport"
+      }
+    }
+  }
+}

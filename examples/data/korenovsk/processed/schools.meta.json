@@ -1,0 +1,34 @@
+{
+  "created_utc": "2026-10-30T20:43:21.524814+00:00",
+  "versions": {
+    "blocksnet": "1.0.0a9",
+    "iduedu": "0.4.1",
+    "geopandas": "1.2.0",
+    "osmnx": "2.1.1",
+    "networkx": "3.7",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "torch": "2.2.2"
+  },
+  "revision": "korenovsk-build-1",
+  "sha256": "965079593763b1884b9fb19f00392e30290977ca794aff72ae1e9f99ede5df67",
+  "rows": 8,
+  "storage_crs": "EPSG:4326",
+  "details": {
+    "signature": "75ee85bd8be352b2b938ddbaeba8652a538960630093ce1f91045ef301a8dd04",
+    "parameters": {
+      "input": "9a41fe6b8f6ac795930caff3169c5bda37671473a8d618dd5d2d75bdede585f3",
+      "excluded_ids": [
+        0,
+        1,
+        7
+      ],
+      "config": {
+        "name_ru": "школа",
+        "demand": 120,
+        "accessibility": 15
+      },
+      "capacity_method": "impute_services school"
+    }
+  }
+}

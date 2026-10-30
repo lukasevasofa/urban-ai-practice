@@ -1,0 +1,49 @@
+{
+  "created_utc": "2026-10-30T18:37:37.738099+00:00",
+  "versions": {
+    "blocksnet": "1.0.0a9",
+    "iduedu": "0.4.1",
+    "geopandas": "1.2.0",
+    "osmnx": "2.1.1",
+    "networkx": "3.7",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "torch": "2.2.2"
+  },
+  "revision": "korenovsk-build-1",
+  "sha256": "daad38678a54f0bc15dbfc0d259fcf0a318d39100c898ebf726241fef33afac4",
+  "rows": 35,
+  "storage_crs": "EPSG:4326",
+  "details": {
+    "signature": "6de870eda5e752b80b20c84c2ef7b745d8c8ce0c751eec78f2696df00878542d",
+    "parameters": {
+      "source": "OpenStreetMap/Nominatim/Overpass via OSMnx",
+      "boundary": "73e77559d0518df85032ca54e7c9ce8cadddecfe72edc696efc75cede5aab73e",
+      "tags": {
+        "riverbank": true,
+        "reservoir": true,
+        "basin": true,
+        "dock": true,
+        "canal": true,
+        "pond": true,
+        "natural": [
+          "water",
+          "bay"
+        ],
+        "waterway": [
+          "river",
+          "canal",
+          "ditch"
+        ],
+        "landuse": "basin",
+        "water": "lake"
+      },
+      "types": [
+        "LineString",
+        "MultiLineString",
+        "Polygon",
+        "MultiPolygon"
+      ]
+    }
+  }
+}

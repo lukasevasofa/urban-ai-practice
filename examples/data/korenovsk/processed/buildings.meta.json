@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-10-30T20:37:03.247391+00:00",
+  "versions": {
+    "blocksnet": "1.0.0a9",
+    "iduedu": "0.4.1",
+    "geopandas": "1.2.0",
+    "osmnx": "2.1.1",
+    "networkx": "3.7",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "torch": "2.2.2"
+  },
+  "revision": "korenovsk-build-1",
+  "sha256": "1ff83b9ef0b6bdc0dc090884571b85a3dbb9b44e4377fd5b488fbeea97d6cb42",
+  "rows": 15202,
+  "storage_crs": "EPSG:4326",
+  "details": {
+    "signature": "c932d915ba6dfb18acd97c7623b06a0b31eea9990f534d5419f41ad7379c51ff",
+    "parameters": {
+      "input": "97f248440c1e8a1c22eafffcdd24d20419320bdbc55d5460e9321e7dd42b9a38",
+      "floors": 1,
+      "living_coefficient": 0.9,
+      "m2_per_person": 30,
+      "living_tags": [
+        "residential",
+        "house",
+        "apartments",
+        "detached",
+        "terrace",
+        "dormitory",
+        "semidetached_house",
+        "bungalow"
+      ]
+    }
+  }
+}

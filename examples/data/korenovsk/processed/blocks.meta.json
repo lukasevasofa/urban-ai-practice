@@ -1,0 +1,29 @@
+{
+  "created_utc": "2026-10-30T18:38:50.534276+00:00",
+  "versions": {
+    "blocksnet": "1.0.0a9",
+    "iduedu": "0.4.1",
+    "geopandas": "1.2.0",
+    "osmnx": "2.1.1",
+    "networkx": "3.7",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "torch": "2.2.2"
+  },
+  "revision": "korenovsk-build-1",
+  "sha256": "99c1f0ba9026877f27b91627bcec36b66e2e0eef44f5567d92bf286a16969e3b",
+  "rows": 403,
+  "storage_crs": "EPSG:4326",
+  "details": {
+    "signature": "5617c37cd1d36ee9b0b60e8d781830d9915b1e1b3c981ad7f1256bee940bf385",
+    "parameters": {
+      "boundary": "73e77559d0518df85032ca54e7c9ce8cadddecfe72edc696efc75cede5aab73e",
+      "inputs": {
+        "roads": "7dc116a0399220411fc402600aa7e2e1258aad370eab818dc96906db3aa62d25",
+        "railways": "f8d4ebb2031344b5f34178e3a6fc5d1bf533429261f2849bd4f71fa4497094a4",
+        "water": "daad38678a54f0bc15dbfc0d259fcf0a318d39100c898ebf726241fef33afac4"
+      },
+      "method": "cut_urban_blocks; classifier=None"
+    }
+  }
+}

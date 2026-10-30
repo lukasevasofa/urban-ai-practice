@@ -1,0 +1,31 @@
+{
+  "created_utc": "2026-10-30T20:30:23.224514+00:00",
+  "versions": {
+    "blocksnet": "1.0.0a9",
+    "iduedu": "0.4.1",
+    "geopandas": "1.2.0",
+    "osmnx": "2.1.1",
+    "networkx": "3.7",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "torch": "2.2.2"
+  },
+  "revision": "korenovsk-build-1",
+  "sha256": "2e981625fc861be2a59621a2b985159ac1f4ba9f4e490c443c143ceba68babe2",
+  "rows": 259,
+  "storage_crs": "EPSG:4326",
+  "details": {
+    "signature": "5d12fc88899986b11e20d790e555cda1b2650737ca0a183030ffb5091a5c9f87",
+    "parameters": {
+      "source": "OpenStreetMap/Nominatim/Overpass via OSMnx",
+      "boundary": "73e77559d0518df85032ca54e7c9ce8cadddecfe72edc696efc75cede5aab73e",
+      "tags": {
+        "landuse": true
+      },
+      "types": [
+        "Polygon",
+        "MultiPolygon"
+      ]
+    }
+  }
+}

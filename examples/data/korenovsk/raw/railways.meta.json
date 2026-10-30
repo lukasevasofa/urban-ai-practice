@@ -1,0 +1,31 @@
+{
+  "created_utc": "2026-10-30T18:36:04.460411+00:00",
+  "versions": {
+    "blocksnet": "1.0.0a9",
+    "iduedu": "0.4.1",
+    "geopandas": "1.2.0",
+    "osmnx": "2.1.1",
+    "networkx": "3.7",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "torch": "2.2.2"
+  },
+  "revision": "korenovsk-build-1",
+  "sha256": "f8d4ebb2031344b5f34178e3a6fc5d1bf533429261f2849bd4f71fa4497094a4",
+  "rows": 38,
+  "storage_crs": "EPSG:4326",
+  "details": {
+    "signature": "e47cc3f8bc0a8900c5d19f988f5ebe76742c314a7c98d33a49626182c6805c6d",
+    "parameters": {
+      "source": "OpenStreetMap/Nominatim/Overpass via OSMnx",
+      "boundary": "73e77559d0518df85032ca54e7c9ce8cadddecfe72edc696efc75cede5aab73e",
+      "tags": {
+        "railway": "rail"
+      },
+      "types": [
+        "LineString",
+        "MultiLineString"
+      ]
+    }
+  }
+}

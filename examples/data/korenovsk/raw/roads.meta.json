@@ -1,0 +1,53 @@
+{
+  "created_utc": "2026-10-30T18:34:58.006779+00:00",
+  "versions": {
+    "blocksnet": "1.0.0a9",
+    "iduedu": "0.4.1",
+    "geopandas": "1.2.0",
+    "osmnx": "2.1.1",
+    "networkx": "3.7",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "torch": "2.2.2"
+  },
+  "revision": "korenovsk-build-1",
+  "sha256": "7dc116a0399220411fc402600aa7e2e1258aad370eab818dc96906db3aa62d25",
+  "rows": 477,
+  "storage_crs": "EPSG:4326",
+  "details": {
+    "signature": "51df59ff87cdfd90a040520e3bf9a749e25dc79c69ad880881c3e42df889a829",
+    "parameters": {
+      "source": "OpenStreetMap/Nominatim/Overpass via OSMnx",
+      "boundary": "73e77559d0518df85032ca54e7c9ce8cadddecfe72edc696efc75cede5aab73e",
+      "tags": {
+        "highway": [
+          "construction",
+          "living_street",
+          "motorway",
+          "motorway_link",
+          "pedestrian",
+          "primary",
+          "primary_link",
+          "residential",
+          "road",
+          "secondary",
+          "secondary_link",
+          "tertiary",
+          "tertiary_link",
+          "track",
+          "trunk",
+          "trunk_link",
+          "unclassified"
+        ],
+        "service": [
+          "living_street",
+          "emergency_access"
+        ]
+      },
+      "types": [
+        "LineString",
+        "MultiLineString"
+      ]
+    }
+  }
+}

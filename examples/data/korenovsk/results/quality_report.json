@@ -1,0 +1,34 @@
+{
+  "city": "Кореновск, Краснодарский край, Россия",
+  "scope": "Только город; граница вручную подтверждена",
+  "boundary_hash": "73e77559d0518df85032ca54e7c9ce8cadddecfe72edc696efc75cede5aab73e",
+  "blocks": 403,
+  "city_area_ha": 3562.0310143730217,
+  "blocks_area_ha": 3435.9151105234505,
+  "overlap_m2": 0.0,
+  "estimated_population_in_blocks": 5718.0,
+  "population_is_official": false,
+  "floors_estimated_buildings": 15031,
+  "residential_unknown_buildings": 14560,
+  "undefined_density_blocks": 40,
+  "footprint_exceeds_site_blocks": 0,
+  "unassigned_buildings": 0,
+  "school_capacity_estimated_count": 8,
+  "unassigned_schools": 0,
+  "network_calculated": false,
+  "versions": {
+    "blocksnet": "1.0.0a9",
+    "iduedu": "0.4.1",
+    "geopandas": "1.2.0",
+    "osmnx": "2.1.1",
+    "networkx": "3.7",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "torch": "2.2.2"
+  },
+  "assumptions": {
+    "default_floors": 1,
+    "living_area_coefficient": 0.9,
+    "living_demand_m2": 30
+  }
+}

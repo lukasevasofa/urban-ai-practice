@@ -1,0 +1,24 @@
+{
+  "created_utc": "2026-10-30T20:43:21.638877+00:00",
+  "versions": {
+    "blocksnet": "1.0.0a9",
+    "iduedu": "0.4.1",
+    "geopandas": "1.2.0",
+    "osmnx": "2.1.1",
+    "networkx": "3.7",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "torch": "2.2.2"
+  },
+  "revision": "korenovsk-build-1",
+  "sha256": "d662a6eef8351eda66ab2f3872d75891865c7d29413493021f141989081217d8",
+  "rows": 403,
+  "storage_crs": "EPSG:4326",
+  "details": {
+    "signature": "b967efce4f05d84df4a3bbf58f4e2fedeff5914ef3fc846c5d125bc98eb7aa99",
+    "parameters": {
+      "blocks": "99c1f0ba9026877f27b91627bcec36b66e2e0eef44f5567d92bf286a16969e3b",
+      "schools": "965079593763b1884b9fb19f00392e30290977ca794aff72ae1e9f99ede5df67"
+    }
+  }
+}
