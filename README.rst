@@ -1,113 +1,155 @@
-Python package boilerplate (IDU) 
-================================
+Исследование Кореновска с BlocksNet
+=======================================
 
 .. logo-start
 
-.. figure:: https://sun9-46.userapi.com/impf/aUFBStH0x_6jN9UhgwrKN1WN4hZ9Y2HMMrXT2w/NuzVobaGlZ0.jpg?size=1590x400&quality=95&crop=0,0,1878,472&sign=9d33baa41a86de35d951d4bbd8011994&type=cover_group
-   :alt: The Institute of Design and Urban Studies
+Учебное исследование городской территории: Кореновск, Краснодарский край, Россия.
 
 .. logo-end
 
-|Documentation Status| |PythonVersion| |Black|
+.. readme-start
 
-.. readme-start 
-
-Installation
-------------
-
-The library can be installed with ``pip``:
-
-::
-
-   pip install git+https://github.com/vasilstar97/python-package-boilerplate@main
-
-
-How to use
-----------
-
-Use the library by importing classes from ``my_package``:
-
-::
-
-   from my_package.my_module_1 import MyClass
-
-For more detailed use case see our `examples <#examples>`__.
-
-Data
-----
-
-All the required data is stored in `examples
-data folder <./examples/data>`__.
-
-Examples
---------
-
-Next examples will help one to get used to the library:
-
-1. Main `example <./examples/my_example.ipynb>`__ of the library.
-2. ...
-
-Documentation
+О проекте
 -------------
 
-Detailed information and description of the library is available in
-`documentation <https://vasilstar97.github.io/python-package-boilerplate/>`__.
+Проект посвящён анализу **только города Кореновска**, а не всего района
+или городского поселения. На основе данных OpenStreetMap подготовлены
+**403 квартала**, рассчитаны характеристики застройки и модельные показатели.
+Используется **BlocksNet 1.0.0a9** и последовательность из
+`pipeline.ipynb библиотеки <https://github.com/aimclub/blocksnet/blob/main/examples/pipeline.ipynb>`__.
 
-Project Structure
------------------
+Работа выполнена на основе учебного шаблона
+`python-package-boilerplate <https://github.com/vasilstar97/python-package-boilerplate>`__.
+Репозиторий исследования:
+`lukasevasofa/urban-ai-practice <https://github.com/lukasevasofa/urban-ai-practice>`__.
 
-The latest version of the library is available in the ``main`` branch.
+Ноутбуки и дашборд
+----------------------
 
-The repository includes the following directories and modules:
+- `Основной ноутбук <./examples/korenovsk_research.ipynb>`__ — подготовка данных,
+  нарезка кварталов, расчёт показателей, карты, таблицы и экспорт результатов.
+- `Диагностика геометрии <./examples/korenovsk_geometry_diagnostics.ipynb>`__ —
+  проверка размеров и формы кварталов, перекрытий и возможных артефактов у железной дороги.
+- `HTML-дашборд <./dashboard.html>`__ — интерактивная карта с выбором показателя,
+  таблица кварталов, графики, выводы и ограничения. Для просмотра скачайте файл
+  и откройте его в браузере: GitHub показывает исходный HTML, а не интерактивную страницу.
+- `Генератор дашборда <./build_dashboard.py>`__ — читает готовые результаты
+  и создаёт один автономный HTML без загрузки данных и пересчёта показателей BlocksNet.
 
--  `my_package <./my_package>`__
-   directory with the library code:
+Рассчитанные показатели
+---------------------------
 
-   -  ...
-   -  ...
+Для кварталов подготовлены:
 
--  `tests <./tests>`__
-   ``pytest`` testing
--  `examples <./examples>`__
-   examples of how the library works
--  `docs <./docs>`__
-   documentation sources
+- функциональное назначение по тегам OSM и доля покрытия соответствующей зоной;
+- количество зданий, площади их оснований, поэтажная, жилая и нежилая площади;
+- модельное население и его плотность в **жителях на гектар**;
+- **FSI** — поэтажная площадь / площадь квартала;
+- **GSI** — площадь оснований зданий / площадь квартала;
+- **MXI** — жилая площадь / поэтажная площадь;
+- **L** — поэтажная площадь / площадь оснований, модельная средняя этажность;
+- **OSR** — незастроенная площадь / поэтажная площадь; это не доля озеленения;
+- ``share_living`` и ``share_non_living`` — жилая и нежилая площади относительно
+  площади оснований зданий; эти коэффициенты не являются процентами и могут превышать 1;
+- модельные морфотипы **Spacematrix** и **«Стрелки»**;
+- количество школ в сохранённом слое OSM и их модельная вместимость.
 
-Developing
-----------
+**Транспортные показатели не рассчитаны:** готовый совместимый граф пока не получен.
+Отсутствуют матрица времени в пути, конкурентная обеспеченность школами
+(``provision_strong``, ``provision_weak``) и ``area_accessibility``.
+В дашборде они отмечены как недоступные; фиктивные значения не подставляются.
+Разделы 10–11 ноутбука остаются невыполненными.
 
-...
+Качество данных и ограничения
+---------------------------------
 
-License
--------
+**Результаты являются учебной моделью, а не официальной статистикой или обследованием города.**
 
-The project has `BSD-3-Clause license <./LICENSE>`__
+- По сохранённому отчёту для **15 031 здания** этажность была подставлена,
+  для **14 560 зданий** жилое назначение неизвестно. Это существенно ограничивает
+  оценки площадей помещений, населения, MXI, этажности и морфотипов.
+- Учебные допущения: при отсутствии этажности — **1 этаж**, коэффициент жилой
+  площади — **0,9**, площадь на человека — **30 м²**. Сохранённая оценка
+  **5718 жителей** относится к модели по распознанной жилой площади и
+  **не является фактическим населением Кореновска**.
+- Для **8 школ** вместимость подставлена типовым значением. Нельзя делать вывод
+  о реальном дефиците мест без проверки фактических вместимостей и населения.
+- По сообщённым итогам диагностики геометрия кварталов валидна, перекрытий нет,
+  но выявлены **15 потенциальных артефактов у железной дороги** и
+  **36 кварталов площадью более 10 га**. Ручная корректировка не выполнялась.
+  Эти категории не означают доказанные ошибки: крупный квартал может быть корректным.
+- Узкие фрагменты и крупные кварталы ограничивают сопоставимость пространственных
+  показателей. Для **40 кварталов** в отчёте отмечены неопределённые коэффициенты
+  плотности; отсутствующие значения не следует считать нулевыми.
+- Назначение по OSM не заменяет официальный генплан. Отсутствие объекта или тега
+  в OSM не доказывает отсутствие здания, школы или жилого использования.
 
-Acknowledgments
----------------
+Числа о полноте данных взяты из
+`quality_report.json <./examples/data/korenovsk/results/quality_report.json>`__.
+Сводка ограничений нарезки зафиксирована в основном ноутбуке по результатам
+диагностики, сообщённым автором исследования.
 
-...
+Сохранённые данные
+----------------------
 
-Contacts
---------
+Рабочая папка — ``examples/data/korenovsk/``:
 
-You can contact me:
+- ``raw/`` — исходные слои OSM и паспорта файлов;
+- ``processed/`` — кварталы и обработанные слои;
+- ``results/`` — итоговые GeoJSON, CSV, графики PNG и отчёт качества.
 
--  `Vasilii Starikov <https://t.me/vasilstar>`__ - assistant
+Основные итоговые файлы:
 
-Also, you are welcomed to the `issues <./issues>`__ section!
+- `Кварталы с показателями, GeoJSON <./examples/data/korenovsk/results/blocks_indicators.geojson>`__;
+- `Таблица показателей, CSV <./examples/data/korenovsk/results/blocks_indicators.csv>`__;
+- `Отчёт качества, JSON <./examples/data/korenovsk/results/quality_report.json>`__.
 
-Publications
-------------
+GeoJSON сохраняется в WGS84 (EPSG:4326); площади рассчитывались в местной
+проецированной системе координат. Совместимые готовые файлы повторно используются
+ноутбуком. Виртуальное окружение, кэш OSM и временные файлы исключены из Git.
 
--  `My publication name from scholar or something <https://scholar.google.com/>`__
--  ...
+Запуск на macOS
+-------------------
 
-.. |Documentation Status| image:: https://github.com/vasilstar97/python-package-boilerplate/actions/workflows/documentation.yml/badge.svg?branch=main
-   :target: https://vasilstar97.github.io/python-package-boilerplate/
-.. |PythonVersion| image:: https://img.shields.io/badge/python-3.10-blue
-   :target: https://pypi.org/project/geopandas/
-.. |Black| image:: https://img.shields.io/badge/code%20style-black-000000.svg
-   :target: https://github.com/psf/black
+Все команды выполняются из корня проекта. Для работы с исследовательским ноутбуком
+активируйте окружение и при необходимости установите зависимости из ``pyproject.toml``::
+
+   source .venv/bin/activate
+   python -m pip install -e '.[research]'
+
+В VS Code откройте ``examples/korenovsk_research.ipynb`` и выберите ядро
+``.venv/bin/python``. Выполняйте ячейки по очереди, следуя пояснениям и остановке
+после подготовки кварталов. Особенности окружения macOS описаны в разделе 0 ноутбука.
+Не запускайте все ячейки подряд: транспортная часть требует готового графа.
+
+Для просмотра уже готового дашборда достаточно::
+
+   open dashboard.html
+
+Чтобы заново сформировать HTML из сохранённых результатов::
+
+   python3 build_dashboard.py
+   open dashboard.html
+
+Генератор использует только стандартную библиотеку Python 3.10+.
+Страница работает без интернета; карта отображается без сетевой подложки.
+Повторное создание HTML не запускает исследовательские расчёты.
+
+Остальная структура проекта
+-------------------------------
+
+- ``my_package/`` — учебный Python-пакет;
+- ``examples/`` — ноутбуки и данные;
+- ``tests/`` — тесты учебного пакета;
+- ``docs/`` — документация исходного шаблона, которая может содержать его прежние описания;
+- ``pyproject.toml`` — зависимости и настройки разработки.
+
+Лицензия и источники
+------------------------
+
+Код распространяется по `лицензии BSD-3-Clause <./LICENSE>`__.
+Данные OpenStreetMap: © OpenStreetMap contributors,
+`Open Database License (ODbL) <https://www.openstreetmap.org/copyright>`__.
+Лицензия кода не заменяет условия использования исходных геоданных.
 
 .. readme-end
