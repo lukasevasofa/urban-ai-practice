@@ -1,5 +1,8 @@
 SOURCE_DIR = my_package
 TEST_DIR = tests
+PYTHON ?= python3
+
+.PHONY: lint format venv install install-dev install-docs install-test build clean test tests tests-cov check dashboard-check ci
 
 # code formatting and linting
 
@@ -13,32 +16,42 @@ format:
 # installing
 
 venv: # затем необходимо активировать: source .venv/bin/activate
-	python3 -m venv .venv
+	$(PYTHON) -m venv .venv
 
 install: # простая установка зависимостей без editable режима
-	pip install .
+	$(PYTHON) -m pip install .
 
 install-dev: # установка зависимостей для разработки
-	pip install -e '.[dev]'
+	$(PYTHON) -m pip install -e '.[dev]'
 
-install-docs: # установка зависимостей для тестирования
-	pip install -e '.[docs]'
+install-docs: # установка зависимостей для документации
+	$(PYTHON) -m pip install -e '.[docs]'
 
-install-test: # установка зависимостей для сборки документации
-	pip install -e '.[test]'
+install-test: # только пакет и тесты, без BlocksNet/PyTorch/Jupyter из research
+	$(PYTHON) -m pip install -e '.[tests]'
 
 # building the package
 
 build:
-	python3 -m build .
+	$(PYTHON) -m build .
 
 clean:
 	rm -rf ./build ./dist ./${SOURCE_DIR}.egg-info
 
 # testing
 
-tests: # тестирование
-	pytest ${TEST_DIR}
+test: tests
+
+tests: # тестирование; test и tests поддерживаются для совместимости
+	$(PYTHON) -m pytest ${TEST_DIR}
 
 tests-cov: # тестирование с выводом процента покрытия кода тестами
-	pytest ${TEST_DIR} --cov
+	$(PYTHON) -m pytest ${TEST_DIR} --cov
+
+check: # синтаксис и структура, без выполнения ноутбуков
+	$(PYTHON) scripts/check_project.py
+
+dashboard-check: # генерация только во временную папку из сохранённых результатов
+	$(PYTHON) scripts/check_project.py --dashboard
+
+ci: check test dashboard-check
