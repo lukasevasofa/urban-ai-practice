@@ -1,0 +1,24 @@
+{
+  "status": "ready_for_manual_choices",
+  "source_files_unchanged": true,
+  "source_file_count": 12,
+  "baseline_matches_all_saved_values": true,
+  "python_tests": {
+    "tests": 19,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "webkit_checks_passed": 25,
+  "browser_engine": "macOS WebKit WKWebView",
+  "automatic_search_real_city_executed": false,
+  "automatic_loop_298_tested_synthetically": true,
+  "manual_roles_recorded": [],
+  "manual_choices_approved": false,
+  "pending": [
+    "Пользователь выбирает и обосновывает А и Б",
+    "Подтверждение ручных вариантов",
+    "Реальный полный поиск и выбор В",
+    "Итоговое сравнение А/Б/В и урбанистические выводы"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "samson": {
+    "osm_key": "relation/21910049",
+    "address": "Обнинск, Комарова, 1",
+    "use_evidence": "Внутри контура OSM — торговые POI. МЧС называет объект магазином.",
+    "use_source": "https://40.mchs.gov.ru/uploads/resource/2021-09-02/perechen-obktov-nadzora-kotorym-prisvoeny-kategorii_16305678604664253.pdf",
+    "floors": 1,
+    "floors_source": "https://kaluga.cian.ru/torgovyy-centr-samson-obninsk-133214/",
+    "floors_status": "Карточка коммерческого объекта, не официальный реестр; прежние 9 этажей были восстановлены, не наблюдались"
+  },
+  "boundary_lookup": "https://nominatim.openstreetmap.org/lookup?osm_ids=R1192998&format=jsonv2&polygon_geojson=1",
+  "new_requests_scope": "Один запрос геометрии муниципального контура; адресная проверка одного подозрительного здания; статистический источник уже использовался. Новые исходные данные OSM о зданиях не скачивались."
+}

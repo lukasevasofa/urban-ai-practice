@@ -1,0 +1,26 @@
+{
+  "blocks": 298,
+  "population_model": 133000,
+  "school_sites": 25,
+  "public_school_sites": 19,
+  "capacity_baseline": 9664,
+  "demand": 16015,
+  "served": 9203,
+  "unmet_demand": 6812,
+  "provision_percent": 57.46,
+  "population_gap_percent": 0.0,
+  "population_initial": 198871,
+  "floors_revised_count": 439,
+  "population_uncalibrated": 196763,
+  "garden_population_initial": 1087,
+  "population_calibration": true,
+  "building_count": 5462,
+  "known_levels_percent": 35.5,
+  "known_use_percent": 33.2,
+  "official_capacity_sites": 3,
+  "matrix_shape": [
+    298,
+    298
+  ],
+  "all_checks_passed": true
+}

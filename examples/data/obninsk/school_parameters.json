@@ -1,0 +1,34 @@
+{
+  "service": "school",
+  "demand_per_1000": 120,
+  "accessibility_minutes": 15,
+  "walking_speed_kmh": 4.5,
+  "self_supply": true,
+  "max_depth": 1,
+  "population_method": "Условное распределение 133000 жителей на 01.01.2025 по уточнённой жилой площади вне садовых зон; целочисленное округление наибольшими остатками",
+  "population_calibration": true,
+  "population_scope_check": "population_scope_check.json",
+  "permanent_garden_occupancy": 0,
+  "official_population": 133000,
+  "official_population_date": "2025-01-01",
+  "official_population_rounded": true,
+  "official_population_source": "https://obninsk.ru/obninsk/economic-development/stat/",
+  "supply_scope": "Муниципальные школьные площадки; частные, спортивная школа с отбором и компенсирующая школа–сад №35 исключены",
+  "unknown_capacity_method": "модельная общая площадь учебных корпусов / 18 м² на место",
+  "graph_source": "OSMnx на сохранённой XML-выгрузке OSM; подходящий готовый граф не найден",
+  "blocks_sha256": "e3442e9de01b63f1313df803ef7048c2348c97673907abf7eccc3a62d07296df",
+  "future_scenarios_places": [
+    600,
+    300,
+    300
+  ],
+  "future_scenarios": {
+    "one_school": [
+      600
+    ],
+    "two_schools": [
+      300,
+      300
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "engine": "macOS WebKit WKWebView",
+  "mode": "read-only viewing of completed results",
+  "checks": {
+    "dashboard-provision": {
+      "status": "passed",
+      "title": "Обнинск · кварталы и школы",
+      "rows": 298
+    },
+    "dashboard-population": {
+      "status": "passed",
+      "title": "Обнинск · кварталы и школы",
+      "rows": 298
+    },
+    "school-placement": {
+      "status": "passed",
+      "title": "Обнинск: моделирование размещения школ",
+      "rows": 4
+    },
+    "scenario-comparison": {
+      "status": "passed",
+      "title": "Обнинск: моделирование размещения школ",
+      "rows": 4
+    }
+  },
+  "saved_scenarios_modified": false
+}

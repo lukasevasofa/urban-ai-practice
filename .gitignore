@@ -59,3 +59,18 @@ osm_cache/
 *.tmp
 *.temp
 *~
+
+# Obninsk: local source downloads, historical duplicates and runtime data
+examples/data/obninsk/cache/
+examples/data/obninsk/sources/
+examples/data/obninsk/population_initial/
+examples/data/obninsk/osm_map_*.osm
+examples/data/obninsk/cutting_osm.json
+examples/data/obninsk/pipeline.ipynb
+examples/data/obninsk/boundary_stage_executed.ipynb
+examples/data/obninsk/practice-02.html
+examples/data/obninsk/practice-03.html
+school-placement/obninsk/results/final/validation/
+school-placement/obninsk/results/browser_preview.png
+school-placement/obninsk/runtime/
+publication-site/

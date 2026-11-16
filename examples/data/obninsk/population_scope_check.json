@@ -1,0 +1,17 @@
+{
+  "city_osm_relation": 3396088,
+  "municipality_osm_relation": 1192998,
+  "osm_polygons_equal": true,
+  "official_population": 133000,
+  "official_date": "2025-01-01",
+  "official_value_rounded": true,
+  "official_source": "https://obninsk.ru/obninsk/economic-development/stat/",
+  "crosscheck": "Росстат, Города России 2024: город и округ Обнинск имеют одинаковую численность 132,5 тыс. на 01.01.2024",
+  "crosscheck_url": "https://rosstat.gov.ru/storage/mediabank/Region_Goroda_2024.pdf",
+  "limitation": "Совпадение проверено по OSM, а не по юридическому цифровому контуру. Площадь 55,03 км² в другом документе не согласуется с OSM. Разница дат статистики 2025 и геометрии/застройки OSM 2026 сохраняется.",
+  "calibration_status": "Условная учебная калибровка общей численности, не подтверждение фактических жителей зданий",
+  "territorial_area_scaling": false,
+  "weights": "жилая площадь вне садовых зон",
+  "permanent_garden_occupancy": 0,
+  "seasonality_assumption": "Сценарий постоянного населения: садовая зона не получает постоянных жителей; фактическая регистрация неизвестна"
+}

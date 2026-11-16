@@ -1,0 +1,12 @@
+{
+  "source": "https://api.openstreetmap.org/api/0.6/map",
+  "files": [
+    "osm_map_0.osm",
+    "osm_map_1.osm",
+    "osm_map_2.osm",
+    "osm_map_3.osm"
+  ],
+  "boundary": "https://www.openstreetmap.org/relation/3396088",
+  "timestamp_osm_base": [],
+  "note": "Четыре четверти bounding box границы; дубликаты удалены по типу и OSM ID."
+}

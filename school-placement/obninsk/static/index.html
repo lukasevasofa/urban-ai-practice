@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Обнинск: моделирование размещения школ</title>
+  <link rel="stylesheet" href="/vendor/leaflet.css">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="/vendor/leaflet.js"></script>
+  <script defer src="/app.js"></script>
+</head>
+<body>
+<header>
+  <div class="eyebrow">ОБНИНСК <span>/</span> ПРАКТИЧЕСКАЯ РАБОТА № 3</div>
+  <div class="heading"><div><h1>Обнинск: моделирование размещения школ</h1>
+    <p>Выберите кварталы, задайте новые места и оцените изменение обеспеченности всего города.</p></div>
+    <span class="badge">Учебная модель</span></div>
+</header>
+<main>
+  <div id="notice" role="status" aria-live="polite">Загружаем проверенную исходную модель…</div>
+  <section class="kpis" id="kpis" aria-label="Показатели территории"></section>
+  <div class="workspace">
+    <section class="panel map-panel">
+      <div class="panel-title"><div><h2>Обеспеченность школами</h2><p id="viewCaption">Исходное состояние · 298 кварталов</p></div>
+        <button id="fitMap" class="quiet">Весь город</button></div>
+      <div class="mode-switch" role="group" aria-label="Режим карты">
+        <button data-mode="baseline" class="active">Исходное состояние</button>
+        <button data-mode="scenario">Результат сценария</button>
+        <button data-mode="change">Изменение</button>
+      </div>
+      <div id="map" aria-label="Карта кварталов Обнинска"></div>
+      <div class="map-footer"><span><i class="dot existing"></i>Муниципальная школа</span>
+        <span><i class="dot excluded"></i>Частная / специальная</span>
+        <span><i class="dot planned"></i>Новая школа (квартал)</span></div>
+      <p class="map-hint">Нажмите на квартал. Маркер новой школы обозначает квартал, а не земельный участок.</p>
+    </section>
+    <aside>
+      <section class="panel controls">
+        <div class="step-label">01 / РУЧНОЕ РАЗМЕЩЕНИЕ</div><h2>Соберите свой вариант</h2>
+        <p class="muted">Изучите исходную карту и обоснуйте выбор А и Б до автоматического поиска.</p>
+        <label for="blockSelect">Выбранный квартал</label>
+        <select id="blockSelect"><option value="">Нажмите на карту или выберите ID</option></select>
+        <div id="selectedCard" class="selected-card">Здесь появятся показатели выбранного квартала.</div>
+        <label for="manualCapacity">Вместимость новой школы, мест</label>
+        <div class="inline"><input id="manualCapacity" type="number" min="1" step="1" value="600" inputmode="numeric">
+          <button id="addSchool" class="secondary">Добавить</button></div>
+        <div class="subheading"><h3>Запланированные школы</h3><span id="planCount" class="counter">0</span></div>
+        <div id="planList" class="plan-list"><p class="muted">Пока нет новых школ.</p></div>
+        <p id="planStatus" class="muted">Численность населения и существующие школы неизменны.</p>
+        <button id="calculate" class="primary full">Рассчитать сценарий</button>
+        <button id="reset" class="quiet full">Сбросить план к исходному состоянию</button>
+      </section>
+      <section class="panel controls">
+        <div class="step-label">02 / СОХРАНЕНИЕ И ОБОСНОВАНИЕ</div><h2>Зафиксируйте решение</h2>
+        <label for="scenarioRole">Вариант эксперимента</label>
+        <select id="scenarioRole"><option value="custom">Дополнительный вариант</option>
+          <option value="A">А — одна школа на 600 мест</option>
+          <option value="B">Б — две школы по 300 мест</option>
+          <option value="V" disabled>В — лучший автоматический вариант на 600 мест</option></select>
+        <label for="scenarioName">Название</label><input id="scenarioName" placeholder="Например: школа у нового жилья" maxlength="120">
+        <label for="reason">Почему выбраны эти кварталы?</label>
+        <textarea id="reason" rows="3" maxlength="3000" placeholder="Объясните выбор для А и Б до автопоиска"></textarea>
+        <button id="saveScenario" class="secondary full">Сохранить рассчитанный сценарий</button>
+        <p class="muted">Сценарии сохраняются на компьютере и доступны после перезапуска приложения.</p>
+      </section>
+    </aside>
+  </div>
+
+  <section class="panel auto-panel">
+    <div class="step-label">03 / ПОСЛЕ РУЧНОГО ВЫБОРА</div>
+    <div class="panel-title"><div><h2>Автоматический подбор одной школы</h2>
+      <p>Последовательная проверка всех 298 кварталов. Каждый вариант начинается с существующей сети.</p></div>
+      <span id="autoBadge" class="badge">Поиск не запускался</span></div>
+    <div id="manualStatus" class="manual-status"></div>
+    <div class="auto-controls">
+      <button id="approveManual" class="secondary">Подтвердить А и Б и открыть автопоиск</button>
+      <label for="autoCapacity">Вместимость новой школы, мест</label>
+      <input id="autoCapacity" type="number" min="1" step="1" value="600">
+      <button id="startSearch" class="primary" disabled>Разместить автоматически</button>
+      <button id="cancelSearch" class="quiet" disabled>Остановить перебор</button>
+    </div>
+    <p class="muted">Подтверждение фиксирует ваши ручные варианты, но не запускает поиск. После старта поиска А и Б не переписываются задним числом.</p>
+    <progress id="autoProgress" max="298" value="0"></progress>
+    <p id="searchStatus" role="status" aria-live="polite">Проверено 0 из 298. Дождёмся вашего ручного выбора.</p>
+    <div id="bestBlocks" class="best-blocks"></div>
+    <div class="toolbar"><span class="muted">Выберите строку, чтобы рассчитать и показать этот вариант на карте.</span>
+      <button id="exportAuto" class="quiet">Экспорт перебора CSV</button></div>
+    <div class="table-scroll compact"><table id="autoTable"><thead><tr>
+      <th data-sort="block_id">Квартал ↕</th><th data-sort="capacity_added">Новых мест ↕</th>
+      <th data-sort="unmet">Остаточный дефицит ↕</th><th data-sort="reduction">Сокращение дефицита ↕</th>
+      <th data-sort="provision_percent">Обеспеченность, % ↕</th><th>Статус</th>
+    </tr></thead><tbody></tbody></table></div>
+  </section>
+
+  <section class="panel results-panel">
+    <div class="panel-title"><div><h2>Результаты по кварталам</h2><p>Исходное состояние и последний рассчитанный вариант.</p></div>
+      <div class="inline"><input id="tableFilter" placeholder="Найти ID квартала" aria-label="Найти квартал">
+      <button id="exportBlocks" class="secondary">Экспорт кварталов CSV</button></div></div>
+    <div class="table-scroll"><table id="blocksTable"><thead><tr>
+      <th data-sort="block_id">ID ↕</th><th data-sort="population">Население ↕</th>
+      <th data-sort="capacity_initial">Мест до ↕</th><th data-sort="capacity">Мест после ↕</th>
+      <th data-sort="demand">Спрос ↕</th><th data-sort="provision_initial">До, % ↕</th>
+      <th data-sort="provision">После, % ↕</th><th data-sort="delta_provision_pp">Изменение, п.п. ↕</th>
+      <th data-sort="unmet">Остаточный дефицит ↕</th>
+    </tr></thead><tbody></tbody></table></div>
+  </section>
+
+  <section class="panel results-panel">
+    <div class="panel-title"><div><h2>Сравнение сохранённых сценариев</h2><p>Нажмите на строку, чтобы открыть вариант на карте.</p></div>
+      <button id="exportScenarios" class="secondary">Экспорт сравнения CSV</button></div>
+    <div class="chart-grid"><div><h3>Неудовлетворённый спрос, мест</h3><div id="deficitChart"></div></div>
+      <div><h3>Обеспеченность, %</h3><div id="provisionChart"></div></div></div>
+    <div class="table-scroll"><table id="scenariosTable"><thead><tr>
+      <th data-sort="name">Вариант ↕</th><th>Кварталы / новые школы</th><th data-sort="school_count">Школ ↕</th>
+      <th data-sort="capacity_added">Новых мест ↕</th><th data-sort="capacity">Всего мест ↕</th>
+      <th data-sort="served">Обслужено ↕</th><th data-sort="provision_percent">Обеспеченность, % ↕</th>
+      <th data-sort="unmet">Дефицит ↕</th><th data-sort="reduction">Сокращение ↕</th>
+      <th data-sort="improved_blocks">Улучшено кварталов ↕</th><th>Обоснование</th>
+    </tr></thead><tbody></tbody></table></div>
+  </section>
+
+  <details class="panel methodology"><summary>Методика, источники и ограничения</summary>
+    <p>Источник — окончательные данные практики №2 из <code>examples/data/obninsk/practice3/</code>.
+      Население 133 000 — условное распределение округлённого ориентира на 01.01.2025 по жилой площади OSM 2026;
+      это модельные значения кварталов. Часть школьных мощностей оценена по общей площади зданий / 18 м² на место.
+      В общедоступную сеть включены 19 муниципальных площадок, 9664 места; частные и специальные учреждения показаны отдельно.</p>
+    <p>Используется сохранённая матрица 298×298, самостоятельно построенный пешеходный граф OpenStreetMap,
+      скорость 4,5 км/ч, доступность 15 минут. Прямая привязка к узлам и внутриквартальные подходы в минуты не включены.</p>
+    <p>Расчёт — BlocksNet 1.0.0a9 <code>competitive_provision</code>, 120 мест на 1000 жителей,
+      <code>self_supply=True</code>, <code>max_depth=1</code>. Спрос округляется вверх по кварталам: всего 16 015 мест.
+      Школа в своём квартале обслуживает спрос первой, без внутреннего времени поездки. Метод максимизирует взвешенное распределение,
+      а не гарантирует одинаковый выигрыш всем кварталам. В соседних кварталах возможны как улучшение, так и перераспределение мест.</p>
+    <p>Во всех вариантах меняется только вместимость выбранных кварталов. Прирост мощности не равен автоматически сокращению дефицита.
+      Автопоиск проверяет все кварталы, включая нежилые, по остаточному спросу во всём городе; неполный поиск не считается оптимизацией.
+      Равноэффективные результаты показываются все. Подбор двух школ автоматически не выполняется.</p>
+    <p><strong>Эффективный квартал не означает, что в нём есть подходящий участок.</strong> Землепользование, охранные зоны,
+      параметры строительства, фактическая вместимость и возрастная структура требуют отдельной проверки. Это учебное сравнение,
+      а не готовое градостроительное решение. Без спроса доля обеспеченности не определена и показана серым; ноль показан отдельно.</p>
+    <p>Картографическая подложка требует интернет, данные и расчёты — локальные. Leaflet сохранён в приложении.
+      Источники: <a href="https://mvin8.github.io/ai-technologies-in-urbanism/content/practice/practice-03.html" target="_blank" rel="noreferrer">задание преподавателя</a>,
+      <a href="https://www.openstreetmap.org/relation/3396088" target="_blank" rel="noreferrer">OSM · ODbL</a>,
+      <a href="https://obninsk.ru/obninsk/economic-development/stat/" target="_blank" rel="noreferrer">статистика администрации</a>,
+      <a href="https://www.obninsk.ru/obninsk/social-sphere/education/Obninskschools/" target="_blank" rel="noreferrer">каталог школ</a>.</p>
+  </details>
+  <footer>Обнинск · технологии искусственного интеллекта в урбанистике · практическая работа №3</footer>
+</main>
+</body></html>

@@ -1,0 +1,14 @@
+{
+  "repository": "lukasevasofa/urban-ai-practice",
+  "description": "Пространственный анализ городской территории Обнинска и моделирование размещения общеобразовательных школ с использованием BlocksNet",
+  "topics": [
+    "urban-planning",
+    "blocksnet",
+    "gis",
+    "python",
+    "openstreetmap",
+    "spatial-analysis"
+  ],
+  "status": "approved for publication without GitHub Pages",
+  "pages_enabled": false
+}

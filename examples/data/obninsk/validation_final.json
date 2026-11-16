@@ -1,0 +1,67 @@
+{
+  "status": "passed",
+  "blocks": 298,
+  "matrix_shape": [
+    298,
+    298
+  ],
+  "executed_code_cells": 11,
+  "notebook_errors": 0,
+  "approved_geometry_preserved": true,
+  "mass_balance": true,
+  "locked_geometry_and_matrices_unchanged": true,
+  "initial_population_preserved": 198871,
+  "calibrated_population": 133000,
+  "population_scope_assumption_documented": true,
+  "practice3_files": {
+    "approved_blocks.json": {
+      "bytes": 200,
+      "sha256": "a039af3788652f81892809a8c7b7c5f004e5e8912aa8aa8f6db65e32bda624a7"
+    },
+    "baseline_provision.csv": {
+      "bytes": 7913,
+      "sha256": "b789a0f33859182878d4faa8643b4d2c02ef5812d58cec52a8a6a1b8d0deab50"
+    },
+    "blocks_results.csv": {
+      "bytes": 92618,
+      "sha256": "40b227f1788819c5f458cc7b0425650a4e28103c34a599393a665a4f8069c700"
+    },
+    "blocks_results.geojson": {
+      "bytes": 582103,
+      "sha256": "83e9f5720de0096340cf08272adcf54b79da252d45e133d24c402e18528fc182"
+    },
+    "population_block_comparison.csv": {
+      "bytes": 12301,
+      "sha256": "c67b8472cde16ef62256fde7e6e25b6f9f004a8868cf36370f9fbb2cfdeb97ed"
+    },
+    "population_scenarios.csv": {
+      "bytes": 598,
+      "sha256": "f71172e52a6691d2d64c972a2f28828caafd0e60b68180aea3981398e45b8921"
+    },
+    "population_scope_check.json": {
+      "bytes": 1506,
+      "sha256": "e49c4f70c8ac43a8d75d9d4da69b43e6870d3773fd3216a6b25de28889c9773b"
+    },
+    "school_allocation_links.csv": {
+      "bytes": 346,
+      "sha256": "26611a28c245d09d88ee6222ee485e6398dd95b08eb4a9db3231873a39f1f79d"
+    },
+    "school_parameters.json": {
+      "bytes": 1532,
+      "sha256": "96fda47d990c78c53d9b1263b7e7d6295c63dfeda4bfa59f60277a90c6b2d871"
+    },
+    "schools.csv": {
+      "bytes": 7762,
+      "sha256": "cbb6e197e4d792344eaf3c61d9afd08ae2db3ed1ccbf4d04715d4543d53ce3a5"
+    },
+    "schools.geojson": {
+      "bytes": 18059,
+      "sha256": "3b9e4a3ea42c1b06d3f5d70d02e1ff7d6e09cc75bfa9d72e702fd0687916e573"
+    },
+    "travel_time_minutes.csv": {
+      "bytes": 530089,
+      "sha256": "a46de650474ccbba56a81bc9ee0acf19467d0c6eff55e7046fe93f6225445ab9"
+    }
+  },
+  "browser_check": "Синтаксис и обработчики проверены в V8; графический браузер не запускался"
+}

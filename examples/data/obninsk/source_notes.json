@@ -1,0 +1,46 @@
+{
+  "population": {
+    "value": 133000,
+    "date": "2025-01-01",
+    "precision": "округлено до 0,1 тыс.",
+    "url": "https://obninsk.ru/obninsk/economic-development/stat/",
+    "territory": "городской округ"
+  },
+  "boundary_mismatch": {
+    "model_km2": 43.84,
+    "municipality_2025_km2": 55.0292,
+    "url": "https://base.garant.ru/412329080/b89690251be5277812a78962f6302560/",
+    "calibrate": true,
+    "explanation": "Первоначальная гипотеза несовпадения статистической территории уточнена: полигоны города и округа в OSM геометрически равны. Расхождение опубликованных площадей остаётся; калибровка условная."
+  },
+  "school_register": {
+    "url": "https://www.obninsk.ru/obninsk/social-sphere/education/Obninskschools/",
+    "municipal_organizations": 19,
+    "private_organizations": 4,
+    "state_special_organizations": 1,
+    "total_organizations": 24,
+    "note": "Площадка и организация — разные единицы; 18 и ФТШ в общем корпусе, Держава в двух корпусах, у 18 ещё один корпус."
+  },
+  "ready_graph_search": {
+    "queries": [
+      "Обнинск graphml",
+      "Обнинск готовый транспортный граф скачать",
+      "iduedu графы скачать"
+    ],
+    "checked": [
+      "https://github.com/IDUclub/IduEdu",
+      "https://api.github.com/repos/IDUclub/IduEdu/releases?per_page=3"
+    ],
+    "result": "Подходящий скачиваемый граф с территорией Обнинска и проверяемыми весами не обнаружен. В релизах IduEdu — программные пакеты. Это ограниченный поиск, не доказательство отсутствия графов вообще.",
+    "deviation": "Вместо готового графа построен простой пешеходный граф OSMnx из уже скачанной выгрузки."
+  },
+  "population_revision": {
+    "scope_check": "population_scope_check.json",
+    "osm_city_and_municipality_equal": true,
+    "calibration": true,
+    "target": 133000,
+    "date": "2025-01-01",
+    "status": "Условная учебная калибровка; не доказательство юридической точности контура",
+    "territorial_area_scaling": false
+  }
+}

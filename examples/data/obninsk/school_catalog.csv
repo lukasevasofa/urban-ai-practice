@@ -1,0 +1,26 @@
+name,osm_key,geometry_source,capacity_official,public_supply,source_url,note
+СОШ № 1,way/89383016,building,,1,https://www.obninsk.ru/obninsk/social-sphere/education/Obninskschools/,
+СОШ № 3,way/132208791,campus,,1,https://www.obninsk.ru/obninsk/social-sphere/education/Obninskschools/,
+СОШ № 4,way/88966071,campus,,1,https://www.obninsk.ru/obninsk/social-sphere/education/Obninskschools/,
+СОШ № 5,way/124186933,campus,,1,https://www.obninsk.ru/obninsk/social-sphere/education/Obninskschools/,
+СОШ № 6,way/87747061,building,,1,https://www.obninsk.ru/obninsk/social-sphere/education/Obninskschools/,
+СОШ № 7,relation/21909067,building,,1,https://www.obninsk.ru/obninsk/social-sphere/education/Obninskschools/,
+СОШ № 9,way/88966134,campus,,1,https://www.obninsk.ru/obninsk/social-sphere/education/Obninskschools/,
+СОШ № 10,way/484438410,campus,,1,https://www.obninsk.ru/obninsk/social-sphere/education/Obninskschools/,
+СОШ № 11,relation/14865212,campus,,1,https://www.obninsk.ru/obninsk/social-sphere/education/Obninskschools/,
+СОШ № 12,relation/21262692,campus,,1,https://www.obninsk.ru/obninsk/social-sphere/education/Obninskschools/,
+СОШ № 13,relation/21262690,campus,,1,https://www.obninsk.ru/obninsk/social-sphere/education/Obninskschools/,
+СОШ № 16,way/500449258,campus,,1,https://www.obninsk.ru/obninsk/social-sphere/education/Obninskschools/,
+СОШ № 17,way/698170784,campus,1100,1,https://www.vest-news.ru/news/134744,Мощность при открытии в 2019 г.; опубликованное сообщение о вводе
+СОШ № 18 и ФТШ — общий корпус,relation/13118466,campus,1000,1,https://www.admobninsk.ru/news/news_24274.html,"1000 мест на весь общий корпус, без удвоения для двух организаций"
+"СОШ № 18 — Время, вперёд!",relation/21256610,campus,1144,1,https://obninsk.ru/netcat_files/File/7%287%29.pdf,"В OSM ошибочно подписана №19; это второй корпус СОШ №18, Табулевича,12"
+Гимназия,way/153233716,campus,,1,https://www.obninsk.ru/obninsk/social-sphere/education/Obninskschools/,
+"Лицей Держава — Ленина,194",relation/1318142,building,,1,https://www.obninsk.ru/obninsk/social-sphere/education/Obninskschools/,
+"Лицей Держава — Ленина,196",relation/1318140,building,,1,https://www.obninsk.ru/obninsk/social-sphere/education/Obninskschools/,Два корпуса одной организации
+Технический лицей,way/88377939,campus,,1,https://www.obninsk.ru/obninsk/social-sphere/education/Obninskschools/,
+Начальная школа — детский сад №35,way/89178338,building,,0,https://www.obninsk.ru/obninsk/social-sphere/education/Obninskschools/,"Компенсирующее учреждение; места не открыты для общего неограниченного спроса, дошкольная часть не отделена"
+Обнинский колледж — общеобразовательная школа,way/89383297,building,,0,https://www.obninsk.ru/obninsk/social-sphere/education/Obninskschools/,Частная школа; исключена из общедоступной муниципальной мощности
+Обнинская свободная школа,way/87903298,campus,,0,https://www.obninsk.ru/obninsk/social-sphere/education/Obninskschools/,Частная школа; исключена из муниципальной мощности
+ЧаШа,way/88811735,building,,0,https://www.obninsk.ru/obninsk/social-sphere/education/Obninskschools/,"Частная школа по адресу Звёздная,3; размещение в общем корпусе требует уточнения, не добавляет муниципальных мест"
+Дубравушка,way/87771978,campus,,0,https://www.obninsk.ru/obninsk/social-sphere/education/Obninskschools/,Частная школа-интернат; исключена из муниципальной мощности
+СШОР Л. Латыниной — общее образование,way/89383347,building,,0,https://www.lasgy.ru/netcat_files/46/76/Samoobsledovanie_otchet_itogovyy_25_maya.pdf,Государственная школа со специальным отбором; исключена из общедоступной мощности

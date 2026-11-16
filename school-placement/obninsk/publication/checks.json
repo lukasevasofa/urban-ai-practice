@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "files_without_derived_manifest": 142,
+  "total_bytes": 55219702,
+  "largest_file": {
+    "path": "examples/data/obninsk/walk_graph.graphml",
+    "bytes": 15783707,
+    "sha256": "931708077691bd48cfc4cbadc05bd4bcb1ffdd8030562f7fa7266fe221e3370a"
+  },
+  "readme_links_checked": 34,
+  "images": [
+    {
+      "path": "docs/img/obninsk/dashboard-provision.png",
+      "width": 3200,
+      "height": 2300
+    },
+    {
+      "path": "docs/img/obninsk/dashboard-population.png",
+      "width": 3200,
+      "height": 2300
+    },
+    {
+      "path": "docs/img/obninsk/school-placement.png",
+      "width": 3200,
+      "height": 2300
+    },
+    {
+      "path": "docs/img/obninsk/scenario-comparison.png",
+      "width": 3200,
+      "height": 2300
+    }
+  ],
+  "protected_results_match": true,
+  "secret_or_personal_path_findings": [],
+  "pages_enabled": false,
+  "publication_pending_user_approval": false
+}
